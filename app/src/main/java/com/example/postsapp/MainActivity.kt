@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.postsapp.model.PostResponse
 import com.example.postsapp.ui.theme.PostsAppTheme
+import kotlin.getValue
 
 class MainActivity : ComponentActivity() {
 
@@ -65,3 +66,19 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+/*class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
+
+        val repository = MovieRepository()
+
+        val viewModel = MovieViewModel(repository)
+
+        setContent {
+            MovieScreen(viewModel)
+        }
+    }
+}*/
