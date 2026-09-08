@@ -26,7 +26,7 @@ import kotlin.getValue
 
 class MainActivity : ComponentActivity() {
 
-    private val apiService: ApiService by lazy { RetrofitInstance.getApiService() }
+    private val apiService: ApiService by lazy { RetrofitInstance.provideApiService() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
