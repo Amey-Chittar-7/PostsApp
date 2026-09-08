@@ -6,15 +6,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitInstance {
 
     //URL: https://jsonplaceholder.typicode.com/posts
-    private fun getInstance(): Retrofit {
-        return Retrofit.Builder()
+    val retrofit: Retrofit =
+        Retrofit.Builder()
             .baseUrl("https://jsonplaceholder.typicode.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-    }
 
-    fun getApiService():ApiService{
-        return getInstance().create(ApiService::class.java)
+    fun provideApiService():ApiService{
+        return retrofit.create(ApiService::class.java)
     }
 
 }
